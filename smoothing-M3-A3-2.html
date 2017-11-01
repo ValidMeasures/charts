@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Month');
+          data.addColumn('number', 'Raw');
+          data.addColumn('number', 'M3');              
+          data.addRows([
+          ['', 98,  105],
+          ['', 112, 112],
+          ['', 122, 112],
+          ['', 83,  104],
+          ['', 104, 104],
+          ['', 125, 112],
+          ['', 112, 125],
+          ['', 125, 121],    
+          ['', 121, 121],
+          ['', 100, 107],
+          ['', 107, 107],
+          ['', 147, 127],
+          ['', 127, 135]
+        ]);
+            
+        // Create and draw the visualization
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div')).
+          chart.draw(data, {       
+                 vAxis: {title: "Admissions"},
+                 hAxis: {title: "Month"},
+                 legend: {position: "in", alignment: "end"},
+                 series: [{pointSize: 5, pointShape: "circle", color: "green", 
+                            lineDashStyle: [6,4,6,4], lineWidth: 3}, 
+                          {pointSize: 0, color: "lightgray", lineWidth: 2}]
+             });
+      }
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>    
+    
+  </head>
+
+  <body>
+    <table align="left">
+      <tr valign="top" align="right">
+        <td>
+          <div id="table_div1" style="width: 200px;"></div>
+        </td>
+        <td>
+          <div id="table_div2" style="width: 100px;"></div>
+        </td>
+        <td>
+          <div id="chart_div"></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+
+

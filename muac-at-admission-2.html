@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      MUAC at admission
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['MUAC', 'Number of admissions'],
+          ['115 - 114', 14],
+          ['113 - 112', 42],
+          ['111 - 110', 21],
+          ['109 - 108', 10],
+          ['107 - 106', 7],
+          ['105 - 104', 6],
+          ['103 - 102', 2],
+          ['101 - 100', 1],
+          ['99 - 98',   0],
+          ['97 - 96',   0],
+          ['95 - 94',   0],
+          ['93 - 92',   0],
+          ['91 - 90',   0],
+          ['89 - 88',   2],
+          ['87 - 86',   0],
+          ['85 - 84',   1],
+          ['83 - 82',   0],
+          ['81 - 80',   0],
+          ['79 - 78',   0],
+          ['77 - 76',   0]    
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.ColumnChart(document.getElementById('visualization')).
+            draw(data, { 
+                  chartArea: {left: 100, top: 20, width: "70%", height: "70%"},
+                  colors: [ "#dadada" ],
+                  legend: { position: "none" },
+                  bar: { groupWidth: "100%" },
+                  width:800, height:400,
+                  vAxis: {title: "Number of admissions"},
+                  hAxis: {title: "MUAC (mm)", slantedTextAngle: 90}}
+            );
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+</html>
+​

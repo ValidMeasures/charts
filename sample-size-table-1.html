@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 13px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 12px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Month');
+        data.addColumn('number', 'Admissions');
+        data.addRows([
+          ['≤ 100', 235  ],
+          ['Oct', 874  ],
+          ['Nov', 521  ],
+          ['Dec', 812  ],
+          ['Jan', 850  ],
+          ['Feb', 1125 ],
+          ['Mar', 1249 ],
+          ['Apr', 1566 ],    
+          ['May', 1387 ],
+          ['Jun', 1327 ],
+          ['Jul', 972  ],
+          ['Aug', 448  ],
+          ['Sep', 828  ]
+        ]);
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "200",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-center' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

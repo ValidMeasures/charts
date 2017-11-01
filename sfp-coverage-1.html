@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 22px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 14px; 
+      }
+
+      .cell-left {
+        text-align: left;
+        font-family: Helvetica;
+        font-size: 14px; 
+      }
+      
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string',  'Indicator');
+        data.addColumn('boolean', 'In OTP, In SFP');
+        data.addColumn('boolean', 'In OTP, Out SFP');
+        data.addColumn('boolean', 'Out OTP, In SFP');
+        data.addColumn('boolean', 'Out OTP, Out SFP');
+        data.addRows([
+          ['MUAC < 115mm and/or WHZ < -3',                      true, true, false,  false ],
+          ['MUAC ≥ 115mm and < 125mm and/or WHZ ≥ -3 and < -2', true, true,  true,  false ],
+          ['MUAC ≥ 125 and/or WHZ ≥ -2',                        true, true,  true,   true ]
+        ]);
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "700",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-left' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

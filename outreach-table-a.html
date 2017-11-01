@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 18px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 16px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Indicator');
+        data.addColumn('string', 'Team A');
+        data.addColumn('string', 'Team B');
+        data.addRows([
+          ['Mean number of visits', '3.50',    '0.82'],
+          ['Good performance',      '6 (43%)', '0 (0%)'],
+          ['OK performance',        '3 (21%)', '0 (0%)'],
+          ['Poor performance',      '5 (36%)', '11 (100%)']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "600",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-center' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

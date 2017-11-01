@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Structure of samples in LGAs
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['orgchart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['Name', 'Category', 'Tooltip'],
+          ['LGA', null, null],
+          ['Ward 1', 'LGA', null],
+          ['Ward 2', 'LGA', null],
+          ['Village 1', 'Ward 1', null],
+          ['Village 2', 'Ward 1', null],
+          ['Village 3', 'Ward 1', null],
+          ['Village 4', 'Ward 2', null],
+          ['Village 5', 'Ward 2', null],
+          ['Village 6', 'Ward 2', null]            
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.OrgChart(document.getElementById('visualization')).
+            draw(data, {allowHtml: true});
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 700px; height: 200px;"></div>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Lists and tables of outreach workers' activities
+    </title>
+
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 14px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 12px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Village');
+        data.addColumn('string', 'Team');
+        data.addColumn('string', 'Jun');
+        data.addColumn('string', 'Jul');
+        data.addColumn('string', 'Aug');
+        data.addColumn('string', 'Sep');
+        data.addColumn('string', 'Oct');
+        data.addColumn('string', 'Nov');
+        data.addColumn('string', 'No. of visits');                
+        data.addColumn('string', 'Level of success');                                
+        data.addRows([
+          ['Bene Mukenda',  'A', '04/06/2010', '05/07/2010', '13/08/2010', '03/09/2010', '08/10/2010', '05/11/2010', '6', 'Good'],
+          ['Bwanaali',      'A', '04/06/2010', '',           '13/08/2010', '03/09/2010', '08/10/2010', '05/11/2010', '5', 'Good'],
+          ['Bwese',         'A', '11/06/2010', '30/07/2010', '24/08/2010', '',           '',           '',           '3', 'OK'],
+          ['Kasha',         'A', '11/06/2010', '30/07/2010', '27/08/2010', '24/09/2010', '',           '',           '4', 'OK'],
+          ['Kingombe',      'A', '04/06/2010', '05/07/2010', '13/08/2010', '03/09/2010', '15/10/2010', '19/11/2010', '6', 'OK'], 
+          ['Kiyana',        'A', '11/06/2010', '09/07/2010', '06/08/2010', '03/09/2010', '22/10/2010', '',           '5', 'Good'],
+          ['Lumanisha',     'A', '18/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],
+          ['Mupuluzi',      'A', '',           '23/07/2010', '20/08/2010', '',           '',           '',           '2', 'Poor'],
+          ['Mushanyondo',   'A', '04/06/2010', '09/07/2010', '06/08/2010', '10/09/2010', '15/10/2010', '26/11/2010', '6', 'Good'],
+          ['Muyumba',       'A', '25/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],
+          ['Muzee',         'A', '18/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],                              
+          ['Mwaka',         'A', '04/06/2010', '02/07/2010', '13/08/2010', '',           '',           '',           '3', 'OK'],
+          ['Mwendebule',    'A', '18/06/2010', '23/07/2010', '',           '',           '',           '',           '2', 'Poor'],
+          ['Kamangu',       'B', '18/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],
+          ['Kandolu',       'B', '',           '',           '',           '',           '',           '',           '0', 'Poor'],
+          ['Kasangati',     'B', '',           '',           '',           '',           '',           '',           '0', 'Poor'],
+          ['Kikumbi',       'B', '18/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],                              
+          ['Lwanga',        'B', '25/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],
+          ['Mbaruku',       'B', '',           '',           '',           '',           '',           '',           '0', 'Poor'],
+          ['Milambi',       'B', '18/06/2010', '',           '',           '',           '09/10/2010', '',           '2', 'Poor'],                    
+          ['Misuyu',        'B', '04/06/2010', '',           '',           '',           '09/10/2010', '',           '2', 'Poor'],
+          ['Mubonga',       'B', '',           '',           '',           '',           '',           '',           '0', 'Poor'],
+          ['Munganga',      'B', '11/06/2010', '',           '',           '',           '',           '',           '1', 'Poor'],
+          ['Mwezia',        'B', '25/06/2010', '23/07/2010', '',           '',           '',           '',           '2', 'Poor']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "700",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-center' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

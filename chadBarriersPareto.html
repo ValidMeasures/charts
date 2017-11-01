@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Barriers to CMAM service access and uptake in Chad
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var queryText = encodeURIComponent("SELECT reasons, total FROM 1_Asw5hULjlPoJPpTs32nkGGuUNizF9CBdybXufGz");
+        
+        google.visualization.drawChart({
+          "containerId": "visualization_div",
+          "dataSourceUrl": 'https://www.google.com/fusiontables/gvizdata?tq=',
+          "query":"SELECT reasons, total FROM 1_Asw5hULjlPoJPpTs32nkGGuUNizF9CBdybXufGz WHERE total > 0 ORDER BY total {ASC}",
+          "refreshInterval": 5,
+          "chartType": "BarChart",
+          "options": {
+            "chartArea": { left: 400, top: 50, width: "80%", height: "80%" },
+            "legend": { position: "none" },
+            "colors": [ "#dadada" ],
+            "bar": { groupWidth: "90%" },
+            "title":"Barriers to CMAM service access and uptake",
+            "vAxis": { "title": "" },
+            "hAxis": { "title": "Frequency" }
+          }
+        });
+      }
+        
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization_div" style="width: 800px; height: 500px"></div>
+  </body>
+</html>

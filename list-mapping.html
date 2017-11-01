@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Lists and tables of admissions and defaulters location
+    </title>
+
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 13px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 12px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Health Centre');
+        data.addColumn('string', 'Villages');
+        data.addColumn('string', 'Admissions');
+        data.addColumn('string', 'Defaulters');
+        data.addColumn('boolean', 'Very near (less than 30 mins');
+        data.addColumn('boolean', 'Near (30 mins to an hour)');
+        data.addColumn('boolean', 'Far (more than an hour)');        
+        data.addRows([
+          ['Tudu Wada',  'Shamaki',          '3',  '1',  false, true, false],
+          ['Tudu Wada',  'Kasuwa Mata',      '3',  '2',  false, true, false],
+          ['Tudu Wada',  'Tudu Wada',        '34', '12', true, false, false],
+          ['Tudu Wada',  'London Maidorowa', '3',  '0',  true, false, false],
+          ['Tudu Wada',  'Malam Inn',        '17', '4',  true, false, false], 
+          ['Tudu Wada',  'Comprehensive',    '2',  '1',  false, true, false],
+          ['Tudu Wada',  'Unguwar Ukku',     '3',  '1',  false, true, false],
+          ['Tudu Wada',  'Alkahira',         '10', '4',  false, true, false],
+          ['Tudu Wada',  'Kagarawal',        '43', '19', true, false, false],
+          ['Tudu Wada',  'Gandu',            '9',  '4',  false, true, false],                    
+          ['Tudu Wada',  'Jauro Kuna',       '8',  '5',  false, true, false],
+          ['Tudu Wada',  'Jarkwami',         '2',  '2',  false, false, true],
+          ['Tudu Wada',  'State Locus',      '1',  '1',  false, false, true],
+          ['Tudu Wada',  'Kalshingi',        '1',  '1',  false, false, true],
+          ['Tudu Wada',  'Tudu Dukku',       '2',  '1',  false, false, true],
+          ['Tudu Wada',  'Kwami Tappi',      '2',  '1',  false, false, true],
+          ['Tudu Wada',  'Wuro Tarima',      '2',  '1',  false, false, true],
+          ['Tudu Wada',  'Bundu Wailaru',    '1',  '0',  false, false, true],
+          ['Tudu Wada',  'Sarki Pawa',       '1',  '0',  false, false, true],
+          ['Tudu Wada',  'Wuro Boga',        '1',  '0',  false, false, true],
+          ['Tudu Wada',  'Kilmata',          '1',  '0',  false, false, true],
+          ['Tudu Wada',  'Kufayi',           '8',  '0',  false, true, false],
+          ['Tudu Wada',  'Bojude',           '1',  '0',  false, true, false],
+          ['Tudu Wada',  'Idi',              '5',  '3',  false, true, false],
+          ['Tudu Wada',  'Danache',          '0',  '0',  false, true, false],
+          ['Tudu Wada',  'PZ',               '3',  '0',  false, true, false],
+          ['Tudu Wada',  'Dawaki',           '1',  '0',  false, true, false],
+          ['Tudu Wada',  'Unguwar Unguda',   '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Wazirum Waziri',   '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Kilishi',          '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Madaki',           '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Galadima',         '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Baba Jauro',       '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Modibo',           '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Railway',          '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Jauro Catel',      '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Harwagana',        '2',  '0',  false, false, true],
+          ['Tudu Wada',  'Jekadafari',       '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Kumbiya-Kumbiya',  '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Bolari East',      '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Bolari West',      '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Bolari South',     '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Pantami',          '0',  '0',  false, false, true],
+          ['Tudu Wada',  'Nassarawo',        '1',  '0',  false, false, true]
+        ]);
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "700",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-center' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

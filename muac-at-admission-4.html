@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      MUAC at admission - High Coverage Program
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['MUAC', 'Number of admissions', {type: 'string', role: 'annotation'}],
+          ['89',  0, ''],
+          ['90',  1, ''],
+          ['91',  1, ''],
+          ['92',  4, 'Many critically low MUACs'],
+          ['93',  1, ''],
+          ['94',  2, ''],
+          ['95',  1, ''],
+          ['96',  1, ''],
+          ['97',  2, ''],
+          ['98',  4, ''],
+          ['99',  2, ''],
+          ['100', 2, ''],
+          ['101', 5, ''],
+          ['102', 18, ''],
+          ['103', 10, ''],
+          ['104', 18, ''],
+          ['105', 20, 'Many low MUAC admissions'],
+          ['106', 20, ''],
+          ['107', 11, ''],
+          ['108', 1, ''],
+          ['109', 3, ''],
+          ['110', 2, ''],
+          ['111', 5, ''],
+          ['112', 5, 'Few MUACs close to admission criteria'],
+          ['113', 2, ''],
+          ['114', 2, ''],
+          ['115', 3, '']
+        ]);
+        
+        // Create and draw the visualization.
+        new google.visualization.ColumnChart(document.getElementById('visualization')).
+            draw(data, {
+            	  reverseCategories: true,
+                  chartArea: {left: 100, top: 20, width: "70%", height: "80%"},
+                  series: [{color: "#dadada", annotations: {textStyle: {fontSize: 10, 
+                                                                        color: "black"}}}
+                          ],
+                  legend: { position: "none" },
+                  bar: { groupWidth: "100%" },
+                  width:800, height:400,
+                  vAxis: {title: "Number of admissions"},
+                  hAxis: {title: "MUAC (mm)", slantedText: true, slantedTextAngle: 90}}
+            );
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+</html>
+​

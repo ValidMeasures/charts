@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Barriers to service access and uptake in a CMAM program
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['Barriers', 'Number of non-covered cases'],
+          ['Fear of rejection',  78],
+          ['Child not recognised as malnourished', 49],
+          ['Program site too far away', 34],
+          ['Lack of program information', 32],
+          ['Relapse or default (not returned)', 30],
+          ['Other reasons', 21],
+          ['Inappropriately discharged', 10],
+          ['Interface problems', 2]    
+        ]);
+
+        // Create and draw the visualization.
+        new google.visualization.BarChart(document.getElementById('visualization')).
+            draw(data, {
+                  reverseCategories: true,
+                  chartArea: {left: 250, top: 20, width: "60%", height: "80%"},
+                  colors: [ "#dadada" ],
+                  legend: { position: "none" },
+                  bar: { groupWidth: "90%" },
+                  width:800, height:400,
+                  vAxis: { title: "" },
+                  hAxis: { title: "Number of non-covered cases" }
+                });
+      }
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+</html>

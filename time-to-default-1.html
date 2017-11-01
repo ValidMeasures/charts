@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+        font-size: 20px;
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Visits');
+        data.addColumn('string', 'Number of defaulters');
+        data.addRows(8);
+        
+        data.setCell(0, 0, '8+ visits', '8+ visits', {style: 'font-size:20px;'});
+        data.setCell(0, 1, '1', '|', {style: 'font-size:40px;'});
+        data.setCell(1, 0, '7 visits', '7 visits', {style: 'font-size:20px;'});
+        data.setCell(1, 1, '1', '|', {style: 'font-size:40px;'});
+        data.setCell(2, 0, '6 visits', '6 visits', {style: 'font-size:20px;'});
+        data.setCell(2, 1, '3', '|||', {style: 'font-size:40px;'});
+        data.setCell(3, 0, '5 visits', '5 visits', {style: 'font-size:20px;'});
+        data.setCell(3, 1, '6', '||||||', {style: 'font-size:40px;'});
+        data.setCell(4, 0, '4 visits', '4 visits', {style: 'font-size:20px;'});
+        data.setCell(4, 1, '7', '|||||||', {style: 'font-size:40px;'});        
+        data.setCell(5, 0, '3 visits', '3 visits', {style: 'font-size:20px;'});
+        data.setCell(5, 1, '17', '|||||||||||||||||', {style: 'font-size:40px;'});
+        data.setCell(6, 0, '2 visits', '2 visits', {style: 'font-size:20px;'});
+        data.setCell(6, 1, '31', '|||||||||||||||||||||||||||||||', {style: 'font-size:40px;'});
+        data.setCell(7, 0, '1 visit', '1 visit', {style: 'font-size:20px;'});
+        data.setCell(7, 1, '46', '||||||||||||||||||||||||||||||||||||||||||||||', {style: 'font-size:40px;'});
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "600",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font' }
+        	     });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

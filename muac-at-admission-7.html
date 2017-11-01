@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      MUAC at admission of defaulters from August to November in Dukku LGA
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['MUAC', 'Number of admissions', {type: 'string', role: 'annotation'}],
+          ['115', 1, ''],
+          ['114', 2, ''],
+          ['113', 1, ''],
+          ['112', 6, ''],
+          ['111', 2, ''],
+          ['110', 15, ''],
+          ['109', 4, ''],          
+          ['108', 2, ''],
+          ['107', 3, ''],          
+          ['106', 1, 'Median MUAC'],          
+          ['105', 6, ''],
+          ['104', 0, ''],
+          ['103', 1, ''],
+          ['102', 1, ''],
+          ['101', 1, ''],                                        
+          ['100', 14, ''],
+          ['99',  1, ''],          
+          ['98',  0, ''],
+          ['97',  0, ''],          
+          ['96',  1, ''],          
+          ['95',  2, ''],
+          ['94',  0, ''],          
+          ['93',  0, ''],          
+          ['92',  1, ''],
+          ['91',  0, ''],          
+          ['90',  4, ''],          
+          ['89',  1, ''],
+          ['88',  0, ''],          
+          ['87',  0, ''],          
+          ['86',  0, ''],
+          ['85',  1, ''],          
+          ['84',  0, ''],          
+          ['83',  0, ''],
+          ['82',  0, ''],          
+          ['81',  0, ''],          
+          ['80',  0, '']
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.ColumnChart(document.getElementById('visualization')).
+            draw(data, {
+                  chartArea: {left: 80, top: 20, width: "70%", height: "70%"},
+                  series: [{color: "#dadada", annotations: {textStyle: {fontSize: 15, 
+                                                                        color: "#002147"}}}
+                          ],
+                  legend: { position: "none" },
+                  bar: { groupWidth: "100%" },
+                  width:800, height:400,
+                  vAxis: {title: "Number of admissions"},
+                  hAxis: {title: "MUAC (mm)", slantedText: "TRUE", slantedTextAngle: 90}}
+            );
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+</html>
+​

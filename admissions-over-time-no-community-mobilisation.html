@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Admissions-over-time Pattern for No Community Outreach Activiites
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'x');
+          data.addColumn('number', 'Admissions');
+          data.addColumn({type: 'string', role: 'tooltip'});
+          data.addColumn({type: 'string', role: 'annotation'});          
+          data.addRows([
+            ['',   23,  'Start of admissions',         ''                               ],
+            ['',   43,  'Increasing',                  ''                               ],    
+            ['',   66,  'Peak',                        'Initial peak in admissions'     ],
+            ['',   60,  'Start of decline',            ''                               ],
+            ['',   35,  'Decreasing trend',            ''                               ],
+            ['',   10,  'Lowest admission',            ''                               ],
+            ['',   12,  'Low admissions',              ''                               ],
+            ['',   16,  'Low admissions',              ''                               ],          
+            ['',   20,  'Low admissions',              ''                               ],
+            ['',   20,  'Mobilisation',                'Community mobilisation started' ],
+            ['',   38,  'Increasing trend',            ''                               ],
+            ['',   112, 'Increasing trend',            ''                               ],
+            ['',   158, 'Increasing trend',            ''                               ],          
+            ['',   140, 'Slight decrease',             ''                               ],
+            ['',   137, 'Starting to stabilise',       ''                               ],
+            ['',   136, 'Admissions stabilise',        ''                               ],
+            ['',   135, 'Admissions stabilise',        ''                               ],
+            ['',   134, 'Admissions stabilise',        ''                               ],
+            ['',   134, 'Admissions stabilise',        ''                               ],
+            ['',   133, 'Acceptable pattern',          'Acceptable pattern established' ],
+            ['',   133, 'Admissions stabilise',        ''                               ],
+            ['',   132, 'Admissions stabilise',        ''                               ]
+          ]);
+              
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('visualization')).
+            draw(data, {
+            	   chartArea: {left: 100, top: 20, width: "70%", height: "80%"},            
+            	   curveType: "function",
+                   width: 800, height: 400,
+                   vAxis: {textPosition: "none", title: "Number of new admissions"},
+                   hAxis: {textPosition: "none", title: "Time"},
+                   legend: "none",
+                   series: [{color: "black", lineWidth: 3}]
+               });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+
+</html>
+​

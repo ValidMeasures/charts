@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Discharge outcomes
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Month');
+          data.addColumn('number', 'Cure rate');              
+          data.addColumn('number', 'Death rate');
+          data.addColumn('number', 'Defaulter rate');                      
+          data.addColumn('number', 'Non-response rate');
+          data.addColumn('number', 'SPHERE Standards: death rate');
+          data.addColumn('number', 'SPHERE Standards: defaulter rate');
+          data.addColumn('number', 'SPHERE Standards: cure rate');
+          data.addRows([
+          ['Sep', 0,  0, 0,  0, 10, 15, 75],
+          ['Oct', 33, 4, 63, 0, 10, 15, 75],
+          ['Nov', 31, 5, 64, 0, 10, 15, 75],
+          ['Dec', 65, 3, 32, 0, 10, 15, 75],
+          ['Jan', 94, 2, 3,  1, 10, 15, 75],
+          ['Feb', 93, 2, 4,  0, 10, 15, 75],
+          ['Mar', 94, 2, 4,  0, 10, 15, 75],
+          ['Apr', 94, 0, 3,  1, 10, 15, 75],    
+          ['May', 95, 0, 3,  1, 10, 15, 75],
+          ['Jun', 95, 0, 3,  1, 10, 15, 75],
+          ['Jul', 96, 0, 3,  1, 10, 15, 75],
+          ['Aug', 90, 1, 8,  1, 10, 15, 75],
+          ['Sep', 75, 1, 23, 1, 10, 15, 75]
+        ]);
+
+        var formatter = new google.visualization.NumberFormat({suffix: '%'});
+        formatter.format(data, 1); // Apply formatter to second column
+        formatter.format(data, 2); // Apply formatter to second column
+        formatter.format(data, 3); // Apply formatter to second column
+        formatter.format(data, 4); // Apply formatter to second column
+        formatter.format(data, 5); // Apply formatter to second column
+        formatter.format(data, 6); // Apply formatter to second column
+        formatter.format(data, 7); // Apply formatter to second column
+            
+        // Create and draw the visualization
+        new google.visualization.LineChart(document.getElementById('visualization')).
+          draw(data, {
+            	 chartArea: {left: 100, top: 20, width: "65%", height: "80%"},        
+                 width:800, height:400,
+                 vAxis: {title: "Admissions"},
+                 hAxis: {title: "Month"},
+                 legend: {position: "none"},
+                 series: [{pointSize: 0, color: "green", lineWidth: 2},  
+                          {pointSize: 0, color: "black", lineWidth: 2},
+                          {pointSize: 0, color: "red", lineWidth: 2},
+                          {pointSize: 0, color: "black", lineDashStyle: [6,4,6,4], lineWidth: 2},
+                          {pointSize: 0, color: "black", lineDashStyle: [6,4,6,4], lineWidth: 1},
+                          {pointSize: 0, color: "black", lineDashStyle: [6,4,6,4], lineWidth: 1},
+                          {pointSize: 0, color: "black", lineDashStyle: [6,4,6,4], lineWidth: 1}]
+             });
+      }
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>    
+  
+  </head>
+  
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+
+</html>
+​

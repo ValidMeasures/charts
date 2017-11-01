@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 13px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 12px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Health zone');
+        data.addColumn('string', 'Time-to-travel');
+        data.addColumn('string', 'Admissions');
+        data.addColumn('string', 'Defaulters');
+        data.addColumn('string', 'Time-to-travel');
+        data.addColumn('string', 'Admissions');
+        data.addColumn('string', 'Defaulters');
+        data.addColumn('string', 'Defaulters/Admissions x 100');                                
+        data.addRows([
+          ['2',  '10 minutes', '3', '1', '20 minutes or less',  '11', '4', '36%'],
+          ['1',  '15 minutes', '2', '0', '20 minutes or less',  '11', '4', '36%'],
+          ['4',  '15 minutes', '1', '1', '20 minutes or less',  '11', '4', '36%'],
+          ['5',  '15 minutes', '2', '2', '20 minutes or less',  '11', '4', '36%'],
+          ['6',  '20 minutes', '0', '0', '20 minutes or less',  '11', '4', '36%'], 
+          ['7',  '20 minutes', '3', '0', '20 minutes or less',  '11', '4', '36%'],
+          ['3',  '30 minutes', '0', '0', 'more than 20 minutes', '2', '1', '50%'],
+          ['8',  '45 minutes', '1', '0', 'more than 20 minutes', '2', '1', '50%'],
+          ['9',  '45 minutes', '0', '0', 'more than 20 minutes', '2', '1', '50%'],
+          ['10', '60 minutes', '0', '0', 'more than 20 minutes', '2', '1', '50%'],                    
+          ['11', '90 minutes', '1', '1', 'more than 20 minutes', '2', '1', '50%']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "700",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-center' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

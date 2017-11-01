@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 13px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 12px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'MUAC (mm)');
+        data.addColumn('number', 'Number of admissions');
+        data.addRows([
+          ['89',   0 ],
+          ['90',   0 ],
+          ['91',   0 ],
+          ['92',   0 ],
+          ['93',   1 ],
+          ['94',   1 ],
+          ['95',   1 ],
+          ['96',   1 ],
+          ['97',   0 ],
+          ['98',   0 ],
+          ['99',   0 ],
+          ['100',  0 ],
+          ['101',  0 ],
+          ['102',  0 ],
+          ['103',  1 ],
+          ['104',  1 ],
+          ['105',  2 ],
+          ['106',  2 ],
+          ['107',  2 ],
+          ['108',  2 ],
+          ['109',  5 ],
+          ['110', 18 ],
+          ['111', 10 ],
+          ['112', 18 ],
+          ['113', 20 ],
+          ['114', 20 ],
+          ['115', 11 ]
+        ]);
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {
+        	        showRowNumber: false,
+        	        width: "200",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-center' }        	        
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id='table_div'></div>
+  </body>
+</html>

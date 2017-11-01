@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Admissions-over-time
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Month');
+          data.addColumn('number', 'Admissions (raw)');              
+          data.addColumn('number', 'Admissions (smooth)');            
+          data.addColumn({type: 'string', role: 'tooltip'});
+          data.addRows([
+          ['Sep', 235,  538,  'Start of admissions'],
+          ['Oct', 874,  629,  'Beginning of increase'],
+          ['Nov', 521,  715,  'Increasing trend'],
+          ['Dec', 812,  825,  'Increasing trend'],
+          ['Jan', 850,  929,  'Increasing trend'],
+          ['Feb', 1125, 1075, 'Increasing trend'],
+          ['Mar', 1249, 1254, 'Increasing trend'],
+          ['Apr', 1566, 1341, 'Increasing trend'],    
+          ['May', 1387, 1367, 'Peak of admissions'],
+          ['Jun', 1327, 1229, 'Beginning of decline'],
+          ['Jul', 972,  1042, 'Decreasing trend'],
+          ['Aug', 448,  813,  'Decreasing trend'],
+          ['Sep', 828,  733,  'Decreasing trend']
+        ]);
+            
+        // Create and draw the visualization
+        new google.visualization.LineChart(document.getElementById('visualization')).
+          draw(data, {
+            	 chartArea: {left: 100, top: 20, width: "70%", height: "80%"},          
+                 width:800, height:400,
+                 vAxis: {title: "Admissions"},
+                 hAxis: {title: "Month"},
+                 legend: {position: "in", alignment: "end"},
+                 series: [{pointSize: 5, pointShape: "circle", color: "green", 
+                            lineDashStyle: [6,4,6,4], lineWidth: 3}, 
+                          {pointSize: 0, color: "lightgray", lineWidth: 2}]
+             });
+      }
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>    
+  
+  </head>
+  
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+
+</html>
+​

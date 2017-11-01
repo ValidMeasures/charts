@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+    <style type='text/css'>
+      .large-font {
+      	text-align: center;
+      	font-style: bold;
+      	font-family: Helvetica;
+      	font-size: 13px;
+      }
+      
+      .cell-center {
+        text-align: center;
+        font-family: Helvetica;
+        font-size: 12px;
+      }
+
+      .cell-right {
+        text-align: right;
+        font-family: Helvetica;
+        font-size: 12px;
+      } 
+
+      .cell-left {
+        text-align: left;
+        font-family: Helvetica;
+        font-size: 12px; 
+      }
+    </style>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'A');
+        data.addColumn('string', 'B');
+        data.addRows([
+          ['Raw',  'M3'],
+          ['98',   '=MEDIAN(A2:A3)'],
+          ['112',  '=MEDIAN(A2:A4)'],
+          ['122',  '=MEDIAN(A3:A5)'],
+          ['83',   '=MEDIAN(A4:A6)'],
+          ['104',  '=MEDIAN(A5:A7)'], 
+          ['125',  '=MEDIAN(A6:A8)'],
+          ['112',  '=MEDIAN(A7:A9)'],
+          ['125',  '=MEDIAN(A8:A10)'],
+          ['121',  '=MEDIAN(A9:A11)'],
+          ['100',  '=MEDIAN(A10:A12)'],                    
+          ['107',  '=MEDIAN(A11:A13)'],
+          ['147',  '=MEDIAN(A12:A14)'],
+          ['127',  '=MEDIAN(A13:A14)']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div1'));
+        table.draw(data, {
+        	        showRowNumber: true,
+        	        width: "200",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-right' }        	        
+        });
+      }
+
+    </script>
+
+    <script type='text/javascript'>            
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'A');
+        data.addColumn('string', 'B');
+        data.addRows([
+          ['Raw',  'M3'],
+          ['98',   '105'],
+          ['112',  '112'],
+          ['122',  '112'],
+          ['83',   '104'],
+          ['104',  '104'], 
+          ['125',  '112'],
+          ['112',  '125'],
+          ['125',  '121'],
+          ['121',  '121'],
+          ['100',  '107'],                    
+          ['107',  '107'],
+          ['147',  '127'],
+          ['127',  '135']
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div2'));
+        table.draw(data, {
+        	        showRowNumber: true,
+        	        width: "200",
+        	        allowHtml: true,
+        	        cssClassNames: { headerRow: 'large-font', tableCell: 'cell-right' }        	        
+        });
+      }
+      
+    </script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Month');
+          data.addColumn('number', 'Raw');
+          data.addColumn('number', 'M3');              
+          data.addRows([
+          ['', 98,  105],
+          ['', 112, 112],
+          ['', 122, 112],
+          ['', 83,  104],
+          ['', 104, 104],
+          ['', 125, 112],
+          ['', 112, 125],
+          ['', 125, 121],    
+          ['', 121, 121],
+          ['', 100, 107],
+          ['', 107, 107],
+          ['', 147, 127],
+          ['', 127, 135]
+        ]);
+            
+        // Create and draw the visualization
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div')).
+          chart.draw(data, {       
+                 vAxis: {title: "Admissions"},
+                 hAxis: {title: "Month"},
+                 legend: {position: "in", alignment: "end"},
+                 series: [{pointSize: 5, pointShape: "circle", color: "green", 
+                            lineDashStyle: [6,4,6,4], lineWidth: 3}, 
+                          {pointSize: 0, color: "lightgray", lineWidth: 2}]
+             });
+      }
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>    
+    
+  </head>
+
+  <body>
+    <table align="left">
+      <tr valign="top" align="right">
+        <td>
+          <div id="table_div1" style="width: 200px;"></div>
+        </td>
+        <td>
+          <div id="table_div2" style="width: 100px;"></div>
+        </td>
+        <td>
+          <div id="chart_div"></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Admissions-over-time Expected Pattern in Emergencies
+    </title>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'x');
+          data.addColumn('number', 'Admissions');
+          data.addColumn({type: 'string', role: 'tooltip'});
+          data.addColumn({type: 'string', role: 'annotation'});
+          data.addRows([
+            ['',   10, 'Start of admissions',                       ''                                            ],
+            ['',   20, 'Increasing',                                ''                                            ],    
+            ['',   40, 'Increasing',                                ''                                            ],
+            ['',   85, 'Prevalent and incident cases admitted',     'Initial peak in admissions'                  ],
+            ['',   80, 'Slight decrease',                           ''                                            ],
+            ['',   75, 'Slight decrease',                           ''                                            ],
+            ['',   70, 'Slight decrease',                           ''                                            ],
+            ['',   65, 'Starting to stabilise',                     ''                                            ],          
+            ['',   63, 'Starting to stabilise',                     ''                                            ],
+            ['',   62, 'Starting to stabilise',                     ''                                            ],
+            ['',   61, 'Admissions stablise',                       ''                                            ],
+            ['',   59, 'Admissions stablise',                       'Admissions stabilise'                        ],
+            ['',   57, 'Admissions stablise',                       ''                                            ],          
+            ['',   55, 'Admissions stablise',                       ''                                            ],
+            ['',   50, 'Drop in admissions',                        ''                                            ],
+            ['',   40, 'Drop in admissions',                        'Admissions drop away as the emergency abates'],
+            ['',   30, 'Drop continues',                            ''                                            ],
+            ['',   20, 'Drop continues',                            ''                                            ],
+            ['',   10, 'Drop continues',                            ''                                            ],
+            ['',   5,  'Drop stabilises',                           ''                                            ],
+            ['',   5,  'Drop stabilises',                           ''                                            ],
+            ['',   5,  'Drop stabilises',                           ''                                            ]
+          ]);
+              
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('visualization')).
+            draw(data, {
+            	   chartArea: {left: 100, top: 20, width: "70%", height: "80%"},
+            	   curveType: "function",
+                   width: 800, height: 400,
+                   vAxis: {textPosition: "none", title: "Number of new admissions"},
+                   hAxis: {textPosition: "none", title: "Time"},
+                   legend: "none",
+                   series: [{color: "black", lineWidth: 3}]
+               });
+      }
+      
+      google.setOnLoadCallback(drawVisualization);
+    </script>    
+  </head>
+
+  <body style="font-family: Arial;border: 0 none;">
+    <div id="visualization" style="width: 800px; height: 400px;"></div>
+  </body>
+
+</html>
+​
